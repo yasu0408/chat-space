@@ -36,7 +36,6 @@
 |------|----|-------|
 |user_id|integer|null:false, foreign_key:true|
 |group_id|integer|null:false, foreign_key:true|
-|post_date|datetime||
 |text|text||
 |image|string||
 
