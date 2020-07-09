@@ -14,35 +14,35 @@
 ## groups table
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null:false|
+|name|string|null:false|
 
 ### Association
 - has_many :users_groups
 - has_many :users, through: :users_groups
 - has_many :messages
 
-## users-groups table
+## users_groups table
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null:false, foreign_key:true|
 |group_id|integer|null:false, foreign_key:true|
 
 ### Association
-- belong_to:users
-- belong_to:groups
+- belong_to:user
+- belong_to:group
 
 ## messages table
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null:false, foreign_key:true|
 |group_id|integer|null:false, foreign_key:true|
-|post_date|datetime|null:false|
-|message|text|null:false|
+|post_date|datetime||
+|text|text||
 |image|string||
 
 ### Association
-- belong_to:users
-- belong_to:groups
+- belong_to:user
+- belong_to:group
 
 # README
 
