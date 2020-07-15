@@ -133,7 +133,7 @@
       .Form {
         display: flex;
         justify-content: space-between;
-        .Form__contents {
+        &__contents {
           position: relative;
           width: 100%;
           background-color: #ffffff;
