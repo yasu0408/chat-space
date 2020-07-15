@@ -1,0 +1,76 @@
+.main_chat
+  .chat_main__group-info
+    .chat_main__group-info__group
+      .chat_main__group-info__groupName
+        test
+      .chat_main__group-info__memberList
+        Member：
+    .chat_main__group-info__editButton
+      = link_to "#", class: "chat_main__group-info__btn" do
+        Edit
+
+  .chat_main__message-list
+    .MessageBox
+      .MessageInfo
+        .MessageInfo__userName
+          piyo
+        .MessageInfo__date
+          2020年07月15日 07時54分
+      .Message
+        %p.Message__content
+          おはよう
+    .MessageBox
+      .MessageInfo
+        .MessageInfo__userName
+          piyo
+        .MessageInfo__date
+          2020年07月15日 07時54分
+      .Message
+        %p.Message__content
+          おはよう
+    .MessageBox
+      .MessageInfo
+        .MessageInfo__userName
+          piyo
+        .MessageInfo__date
+          2020年07月15日 07時54分
+      .Message
+        %p.Message__content
+          おはよう
+    .MessageBox
+      .MessageInfo
+        .MessageInfo__userName
+          piyo
+        .MessageInfo__date
+          2020年07月15日 07時54分
+      .Message
+        %p.Message__content
+          おはよう
+    .MessageBox
+      .MessageInfo
+        .MessageInfo__userName
+          piyo
+        .MessageInfo__date
+          2020年07月15日 07時54分
+      .Message
+        %p.Message__content
+          おはよう
+    .MessageBox
+      .MessageInfo
+        .MessageInfo__userName
+          piyo
+        .MessageInfo__date
+          2020年07月15日 07時54分
+      .Message
+        %p.Message__content
+          おはよう
+   
+  .chat_main__message-form
+    %form.Form
+      %input{"type":"hidden","name":"#","value":"#"}
+      .Form__contents
+        %input.Form__inputContent{"placeholder":"type a message","type":"text","name":"#","id":"#"}
+        %label{class: "Form__inputImage"}
+          = icon('far', 'image')
+          %input{type: "file",class:"Hidden"}
+      %input.Form__submit{"type":"submit","name":"#","value":"Send"}
