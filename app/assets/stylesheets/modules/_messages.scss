@@ -27,14 +27,14 @@
         &__icons {
           display: flex;
           list-style: none;
-          .top-items__pen {
+          &__pen {
             margin-right: 5px;
-            .top-items__btn {
+            &__btn {
               color: #ffffff
             }
           }
-          .top-items__gear {
-            .top-items__btn {
+          &__gear {
+            &__btn {
               color: #ffffff;
             }
           }
