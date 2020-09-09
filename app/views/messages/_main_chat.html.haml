@@ -2,75 +2,35 @@
   .chat_main__group-info
     .chat_main__group-info__group
       .chat_main__group-info__groupName
-        test
+        = @group.name
       .chat_main__group-info__memberList
-        Member：：
+        Members:
+        - @group.users.each do |user|
+          = user.name
     .chat_main__group-info__editButton
-      = link_to "#", class: "chat_main__group-info__btn" do
+      = link_to edit_group_path(@group), class: "chat_main__group-info__btn" do
         Edit
-
+  
   .chat_main__message-list
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__userName
-          piyo
-        .MessageInfo__date
-          2020年07月15日 07時54分
-      .Message
-        %p.Message__content
-          おはよう
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__userName
-          piyo
-        .MessageInfo__date
-          2020年07月15日 07時54分
-      .Message
-        %p.Message__content
-          おはよう
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__userName
-          piyo
-        .MessageInfo__date
-          2020年07月15日 07時54分
-      .Message
-        %p.Message__content
-          おはよう
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__userName
-          piyo
-        .MessageInfo__date
-          2020年07月15日 07時54分
-      .Message
-        %p.Message__content
-          おはよう
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__userName
-          piyo
-        .MessageInfo__date
-          2020年07月15日 07時54分
-      .Message
-        %p.Message__content
-          おはよう
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__userName
-          piyo
-        .MessageInfo__date
-          2020年07月15日 07時54分
-      .Message
-        %p.Message__content
-          おはよう
+    = render @messages
+
+  -# .chat_main__message-list
+  -#   .MessageBox
+  -#     .MessageInfo
+  -#       .MessageInfo__userName
+  -#         piyo
+  -#       .MessageInfo__date
+  -#         2020年07月15日 07時54分
+  -#     .Message
+  -#       %p.Message__content
+  -#         おはよう
    
   .chat_main__message-form
-    %form.Form
-      %input{"type":"hidden","name":"#","value":"#"}
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Form__contents
-        %input.Form__inputContent{"placeholder":"type a message","type":"text","name":"#","id":"#"}
-        %label{class: "Form__inputImage"}
-          = icon('far', 'image')
-          %input{type: "file",class:"Hidden"}
-      %input.Form__submit{"type":"submit","name":"#","value":"Send"}
+        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'Form__submit'
+
